@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+function topUpAmountChoose(){
+	$( "#topUpAmount" ).popup( "open" )
+}
+
+function withDrawAmountChoose(){
+	$( "#withDrawAmount" ).popup( "open" )
+}
+
+$(document).on("pagecreate", "#page-success", function() {
+	//SyntaxHighlighter.all();
+	
+	$( "input[name='radio-topUp']" ).on( "click", function( event, ui ) {
+		if (this.value == 1) {
+			$("#topUpArea").html("10元");
+		} else if (this.value == 2) {
+			$("#topUpArea").html("20元");
+		} else if (this.value == 3) {
+			$("#topUpArea").html("30元");
+		} else if (this.value == 4) {
+			$("#topUpArea").html("50元");
+		}
+	});
+	
+	$( "input[name='radio-withDraw']" ).on( "click", function( event, ui ) {
+		if (this.value == 1) {
+			$("#withDrawArea").html("10元");
+		} else if (this.value == 2) {
+			$("#withDrawArea").html("20元");
+		} else if (this.value == 3) {
+			$("#withDrawArea").html("30元");
+		} else if (this.value == 4) {
+			$("#withDrawArea").html("50元");
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div data-role="page" id="page-success" data-dom-cache="true"><!-- page-->
+	<div data-role="header" data-theme="a">
+		<h1>兑换</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Back</a>
+	</div>
+	<div style="height:10px"></div>
+	<div data-demo-html="true">
+		<ul data-role="listview" data-inset="true">
+			<li>
+			 <a href="#one">
+				<img src="img/dui.png">
+					<h2>话费充值</h2>
+					<p>快速便捷</p>
+				</a>
+			</li>
+			<li>
+				<a href="#two">
+					<img src="img/dui.png">
+					<h2>支付宝提现</h2>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="img/dui.png">
+					<h2>购买商品</h2>
+					<p>超值优惠</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="one" data-theme="a">
+
+	<div data-role="header" data-theme="a">
+		<h1>话费充值</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Back</a>
+	</div>
+	<div style="height:10px"></div>
+	<div data-demo-html="true">
+		<ul data-role="listview">
+			<li><div style="float:left;width:30%">手机号码</div><input data-role="none" type="text" id="" style="border:0;height:100%;width:70%;text-align:right;outline:none"/></li>
+			<li>
+				<div style="float:left;width:30%">充值金额</div>
+				<div style="width:70%;float:right;postion:relative;text-align:right" onclick="topUpAmountChoose()">
+					<div data-role="popup" id="topUpAmount" data-overlay-theme="b" class="ui-content">
+						<form>
+							<fieldset data-role="controlgroup">
+								<input type="radio" name="radio-topUp" id="radio-occuption-1" value="1">
+								<label for="radio-occuption-1">10元</label>
+								<input type="radio" name="radio-topUp" id="radio-occuption-2" value="2">
+								<label for="radio-occuption-2">20元</label>
+								<input type="radio" name="radio-topUp" id="radio-occuption-3" value="3">
+								<label for="radio-occuption-3">30元</label>
+								<input type="radio" name="radio-topUp" id="radio-occuption-4" value="4">
+								<label for="radio-occuption-4">50元</label>
+								
+							</fieldset>
+						</form>
+					</div>
+					<span id="topUpArea"></span>&nbsp;
+				</div>
+			</li>
+		</ul>
+		<div class="ui-grid">
+	    	<div class="ui-block"><input type="button" onclick="" value="提交"></div>
+		</div>
+	</div>
+</div><!-- /page two -->
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two" data-theme="a">
+
+	<div data-role="header" data-theme="a">
+		<h1>支付宝提现</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Back</a>
+	</div>
+	<div style="height:10px"></div>
+	<div data-demo-html="true">
+		<ul data-role="listview">
+			<li><div style="float:left;width:30%">账号</div><input data-role="none" type="text" id="" style="border:0;height:100%;width:70%;text-align:right;outline:none"/></li>
+			<li><div style="float:left;width:30%">姓名</div><input data-role="none" type="text" id="" style="border:0;height:100%;width:70%;text-align:right;outline:none"/></li>
+			<li>
+				<div style="float:left;width:30%">金额</div>
+				<div style="width:70%;float:right;postion:relative;text-align:right" onclick="withDrawAmountChoose()">
+					<div data-role="popup" id="withDrawAmount" data-overlay-theme="b" class="ui-content">
+						<form>
+							<fieldset data-role="controlgroup">
+								<input type="radio" name="radio-withDraw" id="radio-occuption-1" value="1">
+								<label for="radio-occuption-1">10元(实扣10.5元)</label>
+								<input type="radio" name="radio-withDraw" id="radio-occuption-2" value="2">
+								<label for="radio-occuption-2">20元(实扣20.5元)</label>
+								<input type="radio" name="radio-withDraw" id="radio-occuption-3" value="3">
+								<label for="radio-occuption-3">30元(实扣30.5元)</label>
+								<input type="radio" name="radio-withDraw" id="radio-occuption-4" value="4">
+								<label for="radio-occuption-4">50元(实扣50.5元)</label>
+								
+							</fieldset>
+						</form>
+					</div>
+					<span id="withDrawArea"></span>&nbsp;
+				</div>
+			</li>
+		</ul>
+		<div class="ui-grid">
+	    	<div class="ui-block"><input type="button" onclick="" value="提交"></div>
+		</div>
+	</div>
+</div><!-- /page two -->
+
+</body>
+</html>

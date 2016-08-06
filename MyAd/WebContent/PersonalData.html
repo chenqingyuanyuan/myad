@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/mobipick.css" type="text/css" />
+<script type="text/javascript" src="js/xdate.js"></script>
+<script type="text/javascript" src="js/xdate.i18n.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/mobipick.js"></script>
+<style type="text/css">
+.noshadow {
+   $("input").attr('data-role','none');  
+}
+</style>
+
+</head>
+<body>
+<div data-role="page" id="page-success" data-dom-cache="true"><!-- page-->
+<script type="text/javascript">
+$(document).on("pagecreate", "#page-success", function() {
+	//SyntaxHighlighter.all();
+
+	var picker = $("div[id='birthday']", this );
+
+	picker.mobipick();
+
+	picker.on( "change", function() {
+			var date = $( this ).val();
+			var dateObject = $( this ).mobipick( "option", "date" );
+			$("#birthdayArea").html(date);
+	});
+	
+	$( "input[name='radio-choice-v-2']" ).on( "click", function( event, ui ) {
+		if (this.value == 1) {
+			$("#sexArea").html("男");
+		} else {
+			$("#sexArea").html("女");
+		}
+	});
+	
+	$( "input[name='radio-occuption']" ).on( "click", function( event, ui ) {
+		if (this.value == 1) {
+			$("#occuptionArea").html("学生");
+		} else if (this.value == 2) {
+			$("#occuptionArea").html("上班族");
+		} else if (this.value == 3) {
+			$("#occuptionArea").html("老板");
+		} else if (this.value == 4) {
+			$("#occuptionArea").html("自由职业者");
+		}
+	});
+	
+	
+});
+function maleChoose(){
+	$( "#popupNested" ).popup( "open" )
+}
+function occuptionChoose(){
+	$( "#occuption" ).popup( "open" )
+}
+function popupPhoto(){
+	alert(1);
+	 window.myObj.popupPhoto();  
+}
+function phoneClick(){
+	$('#phocon')[0].click();
+}
+
+</script>
+	<div data-role="header" data-theme="a">
+		<h1>资料</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Back</a>
+	</div>
+	<div style="height:10px"></div>
+	<div data-demo-html="true">
+		<ul data-role="listview">
+			<li><div style="float:left;width:30%">昵称</div><input data-role="none" type="text" id="test" style="border:0;height:100%;width:70%;text-align:right;outline:none"/></li>
+			<li><div style="float:left;width:30%">头像</div><div style="width:70%;float:right;postion:relative;text-align:right;" onclick="popupPhoto()">&nbsp;</div></li>
+			<li>
+				<div style="float:left;width:30%">性别</div>
+				<div style="width:70%;float:right;postion:relative;text-align:right" onclick="maleChoose()">
+					<div data-role="popup" id="popupNested" data-overlay-theme="b" class="ui-content">
+						<form>
+							<fieldset data-role="controlgroup">
+								<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="1">
+								<label for="radio-choice-v-2b">男</label>
+								<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2c" value="2">
+								<label for="radio-choice-v-2c">女</label>
+							</fieldset>
+						</form>
+					</div>
+					<span id="sexArea"></span>&nbsp;
+				</div>
+			</li>
+			<li>
+				<div style="float:left;width:30%">生日</div>
+				<div id="birthday" style="width:70%;float:right;postion:relative;text-align:right"><span id="birthdayArea"></span>&nbsp;</div>
+			</li>
+			<li>
+				<div style="float:left;width:30%">职业</div>
+				<div style="width:70%;float:right;postion:relative;text-align:right" onclick="occuptionChoose()">
+					<div data-role="popup" id="occuption" data-overlay-theme="b" class="ui-content">
+						<form>
+							<fieldset data-role="controlgroup">
+								<input type="radio" name="radio-occuption" id="radio-occuption-1" value="1">
+								<label for="radio-occuption-1">学生</label>
+								<input type="radio" name="radio-occuption" id="radio-occuption-2" value="2">
+								<label for="radio-occuption-2">上班族</label>
+								<input type="radio" name="radio-occuption" id="radio-occuption-3" value="3">
+								<label for="radio-occuption-3">老板</label>
+								<input type="radio" name="radio-occuption" id="radio-occuption-4" value="4">
+								<label for="radio-occuption-4">自由职业者</label>
+								
+							</fieldset>
+						</form>
+					</div>
+					<span id="occuptionArea"></span>&nbsp;
+				</div>
+			</li>
+			<li>
+				<div style="float:left;width:30%">
+					手机
+				<a id="phocon" style="display:none" href="#two" class="ui-btn ui-shadow ui-corner-all">Show page "two"</a></div>
+				<div style="width:70%;float:right;postion:relative;text-align:right;" onclick="phoneClick()">&nbsp;</div>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two" data-theme="a">
+
+	<div data-role="header" data-theme="a">
+		<h1>绑定手机</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Back</a>
+	</div>
+	
+	<div style="height:10px"></div>
+	
+	
+</div><!-- /page two -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page-success" data-dom-cache="true"><!-- page-->
+	<div data-role="header" data-theme="a">
+		<h1>明细</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Back</a>
+	</div>
+	
+	<div role="main" class="ui-content jqm-content">
+		<div data-demo-html="true">
+			<div data-role="tabs" id="tabs">
+		      <div data-role="navbar">
+			    <ul>
+			      <li><a href="#one" data-ajax="false">全部</a></li>
+			      <li><a href="#two" data-ajax="false">任务</a></li>
+			      <li><a href="ajax-content-ignore.html" data-ajax="false">推广</a></li>
+			      <li><a href="ajax-content-ignore.html" data-ajax="false">兑换</a></li>
+			    </ul>
+		      </div>
+		      <div id="one" class="ui-body-d ui-content">
+		        <h1>First tab contents</h1>
+		      </div>
+		      <div id="two">
+		        <ul data-role="listview" data-inset="true">
+		            <li><a href="#">Acura</a></li>
+		            <li><a href="#">Audi</a></li>
+		            <li><a href="#">BMW</a></li>
+		            <li><a href="#">Cadillac</a></li>
+		            <li><a href="#">Ferrari</a></li>
+		        </ul>
+		      </div>
+		    </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

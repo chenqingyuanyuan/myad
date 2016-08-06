@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+function showHtmlcallJava(){  
+	alert(1);
+    window.myObj.showBut();  
+}  
+</script>
+<style type="text/css">
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	width: auto;
+	height: 600px;
+}
+.header {
+	background-color: #6C9;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	clip: rect(0px,0px,0px,0px);
+	position: relative;
+	height: 180px;
+	width: auto;
+	color: #fff;
+	font-weight: bold;
+}
+
+.header_inner {
+	background-color: #096;
+	left: 0px;
+	top: 5%;
+	right: 0px;
+	bottom: 0px;
+	position: relative;
+	height: 90%;
+	width: 94%;
+	
+	margin: 0 auto;
+	
+}
+
+.left {float: left;}
+.right {float: right;}
+
+.portrait {
+	width: 70%;
+	margin-top: 30px;
+	position: relative;
+}
+
+.portrait_inner {
+	width: 100%;
+	padding-left: 15%;
+	position: relative;
+}
+
+.money {
+	width: 30%;
+	margin-top: 30px;
+	position: relative;
+}
+.money_inner {
+	width: 100%;
+	padding-right: 15%;
+	position: relative;
+}
+
+.image-wrap { 
+	-webkit-border-radius: 50em; 
+	-moz-border-radius: 50em; 
+	border-radius: 50em; 
+} 
+
+
+</style>
+</head>
+<body>
+<div data-role="page" id="page-success" data-dom-cache="true"><!-- page-->
+	<div data-role="header" data-theme="a">
+		<h1>更多</h1>
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Back</a>
+	</div>
+	
+	<h2>Linked</h2>
+	<div data-demo-html="true">
+		<ul data-role="listview">
+			<li><a href="#">手机</a></li>
+			<li><a href="#">资料</a></li>
+		</ul>
+	</div>
+	<div style="height:10px"></div>
+	<div data-demo-html="true">
+		<ul data-role="listview">
+			<li><a href="#">客服中心</a></li>
+			<li><a href="#">新闻公告</a></li>
+			<li><a href="#">商务合作</a></li>
+		</ul>
+	</div>
+	<div style="height:10px"></div>
+	<div data-demo-html="true">
+		<ul data-role="listview">
+			<li><a href="#">检查升级</a></li>
+			<li><a href="#">切换账户</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

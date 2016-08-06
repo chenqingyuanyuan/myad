@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+function showHtmlcallJava(){  
+	alert(1);
+    window.myObj.showBut();  
+}  
+</script>
+
+</head>
+<body>
+<div data-role="page" id="page-success" data-dom-cache="true"><!-- page-->
+	<style type="text/css">
+body {
+	font-family : 微软雅黑,宋体, 'New York';
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+.header {
+	background-color: #6C9;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	clip: rect(0px,0px,0px,0px);
+	position: relative;
+	height: 150px;
+	width: auto;
+	color: #fff;
+}
+
+.header_inner {
+	background-color: #096;
+	left: 0px;
+	top: 5%;
+	right: 0px;
+	bottom: 0px;
+	position: relative;
+	height: 90%;
+	width: 94%;
+	margin: 0 auto;
+	
+}
+
+.left {float: left;}
+.right {float: right;}
+
+.portrait {
+	width: 70%;
+	margin-top: 30px;
+	position: relative;
+}
+
+.portrait_inner {
+	width: 100%;
+	padding-left: 15%;
+	position: relative;
+}
+
+.money {
+	text-align: right;
+	text-shadow: none;	
+	width: 30%;
+	margin-top: 35px;
+	position: relative;
+}
+.money_inner {
+	width: 100%;
+	right: 15%;
+	position: relative;
+	font-size: 1em;
+}
+.money_count { 
+	width: 100%;
+	right: 15%;
+	padding-right: 15%;
+	position: relative;
+	font-size: 3em;
+} 
+.image-wrap { 
+	-webkit-border-radius: 40em; 
+	-moz-border-radius: 40em; 
+	border-radius: 40em; 
+} 
+
+
+</style>
+	<div class="header">
+		<div class="header_inner">
+			<div class="left portrait">
+				<div class="portrait_inner">
+					<span class="image-wrap " style="position:relative; display:inline-block; background:url(img/wo1.png) no-repeat center center; width:80px; height:80px;"> 
+						<img src="img/wo1.png" style="opacity: 0;"> 
+					</span> 
+				</div>
+			</div>
+			<div class="right money">
+				<div class="money_inner">
+					我的余额(元)
+				</div>
+				<div class="money_count">
+					0
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-grid-a">
+	    <div class="ui-block-a"><input type="button" onclick="javascript:window.location.href='Detail.html'" value="明细"></div>
+	    <div class="ui-block-b"><input type="button" onclick="javascript:window.location.href='More.html'" value="更多"></div>
+	</div>
+	<div role="main" class="ui-content jqm-content">
+		<div data-demo-html="true">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="Earn.html"><img src="img/zhuan.png" alt="赚钱" class="ui-li-icon">赚钱</a></li>
+				<li><a href="Convert.html" data-ajax="false"><img src="img/dui.png" alt="兑换" class="ui-li-icon">兑换</a></li>
+				<li><a href="RankingList" data-ajax="false"><img src="img/tuiguang.png" alt="排行" class="ui-li-icon">排行</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
